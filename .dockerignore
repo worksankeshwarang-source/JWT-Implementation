@@ -1,0 +1,7 @@
+.idea
+.git
+HELP.md
+*.log
+logs/
+target/
+jwt-implementation
