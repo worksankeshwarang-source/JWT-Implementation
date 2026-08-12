@@ -48,3 +48,6 @@ jobs:
           JWT_EXPIRY: ${{ secrets.JWT_EXPIRY }}
           SHOW_SQL: false
         run: ./mvnw clean package
+
+      - name: Build Docker image
+        run: docker build -t jwt-implementation:latest .
