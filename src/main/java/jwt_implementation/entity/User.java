@@ -1,6 +1,7 @@
 package jwt_implementation.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,13 +20,16 @@ public class User {
     @Column(name = "user_id")
     private Long userId;
 
-    @Column(name = "username", nullable = false, unique = true)
+    @NotBlank
+    @Column(name = "username", unique = true)
     private String username;
 
-    @Column(name = "password", nullable = false)
+    @NotBlank
+    @Column(name = "password")
     private String password;
 
-    @Column(name = "user_role", nullable = false)
+    @NotBlank
+    @Column(name = "user_role")
     private String userRole;
 
     public Long getUserId() {

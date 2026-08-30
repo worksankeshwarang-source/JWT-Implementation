@@ -1,5 +1,6 @@
 package jwt_implementation.controller;
 
+import jakarta.validation.Valid;
 import jwt_implementation.dto.LoginRequest;
 import jwt_implementation.dto.RegisterRequest;
 import jwt_implementation.service.AuthService;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin
 public class AuthController {
 
     private final AuthService authService;
@@ -19,7 +21,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody RegisterRequest request){
+    public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest request){
 
         return authService.register(request);
 
