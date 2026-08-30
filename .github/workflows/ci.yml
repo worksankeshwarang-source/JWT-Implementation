@@ -75,6 +75,6 @@ jobs:
             docker rm jwt-app || true
             docker run -d \
               --name jwt-app \
-              --networt --jwt-network \
+              --network --jwt-network \
               -p 8090:8090 \
               ${{ secrets.DOCKER_USERNAME }}/jwt-implementation:latest
